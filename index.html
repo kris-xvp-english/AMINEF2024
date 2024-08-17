@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Profile Presentation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #1e1e1e;
+      color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slide {
+      display: none;
+      padding: 20px;
+      text-align: center;
+      max-width: 100%;
+      background-color: #2c2c2c;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      border-radius: 15px;
+      margin: 20px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .slide.active {
+      display: block;
+      animation: fadeIn 1s ease-in;
+    }
+
+    h1, h2, h3, p, ul {
+      color: #f4f4f4;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    p, ul {
+      font-size: 1.5em;
+      line-height: 1.6;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style-type: none;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    button {
+      padding: 5px 30px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      h2 {
+        font-size: 2em;
+      }
+
+      h3 {
+        font-size: 1.8em;
+      }
+
+      p, ul {
+        font-size: 1.2em;
+      }
+
+      button {
+        font-size: 1.2em;
+      }
+
+      .slide {
+        padding: 10px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .extracurricular-columns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .column {
+      flex: 1 1 20%;
+      max-width: 100%;
+      box-sizing: border-box;
+      padding: 5px;
+      background-color: #3a3a3a;
+      border-radius: 5px;
+      margin: 5px;
+    }
+
+    .column ul {
+      padding-left: 0;
+    }
+
+    .background-decorator {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .decorative-shape {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      transition: all 1s ease-in-out;
+      will-change: transform, width, height, top, left;
+    }
+
+    .decorative-shape:nth-child(1) {
+      width: 150px;
+      height: 150px;
+      top: 10%;
+      left: 10%;
+    }
+
+    .decorative-shape:nth-child(2) {
+      width: 200px;
+      height: 200px;
+      top: 60%;
+      left: 70%;
+    }
+
+    .decorative-shape:nth-child(3) {
+      width: 120px;
+      height: 120px;
+      top: 70%;
+      left: 30%;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background-decorator">
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+    <div class="decorative-shape"></div>
+  </div>
+
+  <div class="slide" id="slide1">
+    <h1>SMA Xaverius</h1>
+    <h2>School Profile Presentation for AMINEF Workshop 2024</h2>
+    <button onclick="nextSlide(1)">Start</button>
+  </div>
+
+  <div class="slide" id="slide2">
+    <h2>Brief Overview of the School</h2>
+    <ul>
+      <li>Grade 10: 7 classes, average of 35 students per class.</li>
+      <li>Grade 11: 8 classes, average of 31 students per class.</li>
+      <li>Grade 12: 7 classes, average of 32 students per class.</li>
+      <li>Total number of teachers, including the principal: 47.</li>
+    </ul>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide3">
+    <h2>Classes Supported by ETA</h2>
+    <p>Grade 10: 7 classes, from X 1 to X 7.</p>
+    <p>Grade 11: 5 classes, from XI 1 to XI 5.</p>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide4">
+    <h2>Extracurricular Activities Offered</h2>
+    <div class="extracurricular-columns">
+      <div class="column">
+        <ul>
+          <li>Futsal</li>
+          <li>Badminton</li>
+          <li>Volleyball</li>
+          <li>Basketball</li>
+          <li>Taekwondo</li>
+          <li>Chemistry Olympiad</li>
+          <li>Biology Olympiad</li>
+          <li>Mathematics Olympiad</li>
+          <li>Economics Olympiad</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>Photography</li>
+          <li>Graphic Design</li>
+          <li>Journalism</li>
+          <li>Modern Dance</li>
+          <li>Traditional Dance</li>
+          <li>Fine Arts</li>
+          <li>Culinary Arts</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>Scouts</li>
+          <li>Choir</li>
+          <li>Music</li>
+          <li>Theater</li>
+          <li>Makeup Artistry</li>
+        </ul>
+      </div>
+      <div class="column">
+        <ul>
+          <li>SICITA (Siswa Pecinta Alam)</li>
+          <li>Broadcasting & Content Creation</li>
+          <li>KIR (Research and Science)</li>
+          <li>Red Cross Youth (PMR)</li>
+        </ul>
+      </div>
+    </div>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide5">
+    <h2>Extracurricular Activities Supported by ETA</h2>
+    <ul>
+      <li>English Club</li>
+      <li>Economics Olympiad</li>
+    </ul>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide6">
+    <h2>School Regulations for ETA</h2>
+    <ul>
+      <li>No smoking</li>
+      <li>No consumption of alcohol or drugs</li>
+      <li>Wear modest clothing</li>
+    </ul>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide7">
+    <h2>Objectives of Receiving Fulbright ETA Assistance</h2>
+    <p>SMA Xaverius seeks Fulbright ETA support for the 2024/2025 academic year to enhance English language learning by improving students' speaking skills and understanding of American culture. The presence of ETAs will enrich the educational experience and reinforce the school's commitment to providing high-quality, globally-oriented education.</p>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide8">
+    <h2>Proposed Activities with ETA in the Next 8 Months</h2>
+    <ul>
+      <li>Increasing student interaction with ETA to enhance communication skills.</li>
+      <li>Developing extracurricular programs to improve English proficiency.</li>
+      <li>Organizing a weekly English Day.</li>
+      <li>Implementing the Pancasila Student Character Strengthening Project.</li>
+      <li>Creating Community Engagement Projects (CEP).</li>
+    </ul>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide9">
+    <h2>English Language Topics for Grades X and XI</h2>
+    <h3>Grade 10 Topics:</h3>
+    <ul>
+      <li>Great People: Accomplished Athletes, World Leaders</li>
+      <li>Travel and Adventure: Famous Tourist Spots, National Parks</li>
+      <li>Health and Wellness: Nutrition, Fitness</li>
+    </ul>
+    <h3>Grade 11 Topics:</h3>
+    <ul>
+      <li>Global Issues: Climate Change, Human Rights</li>
+      <li>Technology: Innovations, Internet Safety</li>
+      <li>Culture and Society: Traditions, Modern Lifestyles</li>
+    </ul>
+    <button onclick="nextSlide(1)">Next</button>
+  </div>
+
+  <div class="slide" id="slide10">
+    <h1>Thank You</h1>
+    <button onclick="restartPresentation()">Restart</button>
+  </div>
+
+  <script>
+    let currentSlide = 1;
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      if (n > slides.length) currentSlide = slides.length;
+      if (n < 1) currentSlide = 1;
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active');
+        if (index === currentSlide - 1) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function morphShapes() {
+      const shapes = document.querySelectorAll('.decorative-shape');
+      shapes.forEach(shape => {
+        const width = Math.random() * 200 + 50;
+        const height = Math.random() * 200 + 50;
+        const top = Math.random() * 80 + 10;
+        const left = Math.random() * 80 + 10;
+        const rotate = Math.random() * 360;
+
+        shape.style.width = `${width}px`;
+        shape.style.height = `${height}px`;
+        shape.style.top = `${top}%`;
+        shape.style.left = `${left}%`;
+        shape.style.transform = `rotate(${rotate}deg)`;
+      });
+    }
+
+    function nextSlide(n) {
+      showSlide(currentSlide += n);
+      morphShapes(); // Call morphShapes when moving to the next slide
+    }
+
+    function restartPresentation() {
+      currentSlide = 1;
+      showSlide(currentSlide);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(currentSlide);
+    });
+  </script>
+  
+</body>
+</html>
